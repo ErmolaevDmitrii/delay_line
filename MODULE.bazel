@@ -1,7 +1,13 @@
 bazel_dep(name = "hdl_rules", version = "0.1.0")
 
+# local_path_override(
+#     module_name = "hdl_rules",
+#     path = "../hdl_rules",
+# )
+
 git_override(
     module_name = "hdl_rules",
-    remote = "https://github.com/your-name/hdl_rules.git",
+    remote = "https://github.com/ErmolaevDmitrii/hdl_rules",
     branch = "main",
 )
+
