@@ -3,5 +3,5 @@ bazel_dep(name = "hdl_rules", version = "0.1.0")
 git_override(
     module_name = "hdl_rules",
     remote = "https://github.com/your-name/hdl_rules.git",
-    commit = "9e76b482015f0061e583eef5a5d6fd466072ef4a",
+    branch = "main",
 )
