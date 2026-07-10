@@ -1,0 +1,10 @@
+{
+  "MODULE_NAME": "example_delay_line",
+  "DATA_WIDTH": 16,
+  "TAPS_COUNT": 2,
+  "HAS_RESET": false,
+  "HAS_ENABLE": false,
+  "HAS_DATA_VALIDITY": false,
+  "HAS_BYPASS": false,
+  "HAS_TAP_OUTPUTS": false
+}

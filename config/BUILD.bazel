@@ -1,0 +1,10 @@
+exports_files(
+    srcs = glob(["*.json"]),
+    visibility = ["//visibility:public"],
+)
+
+label_flag(
+    name = "params_file",
+    build_setting_default = ":example_params.json",
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,1 @@
+build --flag_alias=params_file=//config:params_file

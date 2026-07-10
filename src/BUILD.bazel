@@ -1,18 +1,7 @@
-load("@hdl_rules//jinja2:defs.bzl", "verilog_jinja2_render")
-
-# TODO Implement parameters checks
-# TODO Implement package generation (so that you can generate several versions of the module with no conflicts with each over)
-
-verilog_jinja2_render(
-    name = "cell",
-    template = "cell.sv.j2",
-    out = "cell.sv",
-    params = {
-        "MODULE_NAME": "delay",
-        "DATA_WIDTH": "8",
-        "HAS_RESET": "true",
-        "HAS_ENABLE": "true",
-        "HAS_DATA_VALIDITY": "false",
-        "HAS_BYPASS": "false",
-    },
+exports_files(
+    srcs = [
+        "cell.sv.j2",
+        "top.sv.j2",
+    ],
+    visibility = ["//visibility:public"],
 )

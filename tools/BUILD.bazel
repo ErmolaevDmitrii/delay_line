@@ -1,0 +1,8 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+py_binary(
+    name = "params_checker",
+    srcs = ["params_checker.py"],
+    main = "params_checker.py",
+    visibility = ["//visibility:public"],
+)
