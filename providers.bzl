@@ -1,5 +1,7 @@
 load("@hdl_rules//verilog:defs.bzl", "verilog_library")
 load("@hdl_rules//jinja2:defs.bzl", "verilog_jinja2_render")
+load("@hdl_rules//filelist:defs.bzl", "verilog_filelist")
+load("@hdl_rules//verilog_bundle:defs.bzl", "verilog_bundle")
 
 visibility("private")
 
@@ -110,9 +112,25 @@ def delay_line(
 
         rendered_files.append(":" + target_name)
 
+    library_target = name + "_library"
+    filelist_target = name + "_filelist"
+
     verilog_library(
-        name = name,
+        name = library_target,
         deps = rendered_files,
         visibility = visibility
+    )
+
+    verilog_filelist(
+        name = filelist_target,
+        deps = [":" + library_target],
+        out = name + "/filelist/" + name + ".f",
+    )
+
+    verilog_bundle(
+        name = name,
+        library = ":" + library_target,
+        filelist = ":" + filelist_target,
+        visibility = visibility,
     )
 
